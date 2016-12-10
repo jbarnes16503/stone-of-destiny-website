@@ -3049,3 +3049,13 @@ footer.footer .copyright {
 footer.footer .copyright p {
   font-size: 14px;
 }
+
+/*---------------------------------------------------------------------*/
+/*  6.2. SECTION - PRODUCTS
+/*---------------------------------------------------------------------*/
+
+.col-sm-6 > img {
+    margin: 15px 0px;
+    width: auto;
+    height: auto;
+}
