@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/c5d07b0ad4.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <title>Products | Stone of Destiny</title>
+</head>
+<body>
+
+    <script>
+        $(function () {
+            $('#confirmation').hide();
+            $("#contact-form").submit(function (event) {
+                event.preventDefault();
+                var Form_data = $("#contact-form").serialize();
+
+                $.ajax({
+                    type: "POST",
+                    url: "assets/php/form.php",
+                    data: Form_data,
+                    success: function (value) {
+                        $("#contact-form").fadeOut("slow", function () {
+                            $("#confirmation").fadeIn("slow", function () {
+
+                            });
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand text-white" href="index.html"><span class="brand-primary mr-2 text-spacing-1">STONE</span><i class="px-2 py-1" style="background-color: #cb532e;">of</i><span class="brand-primary ml-2 text-spacing-1">DESTINY</span></a>
+
+            <div>
+                <ul class="navbar-nav ml-auto flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link py-2 pr-2" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <a href="covid.html" style="text-decoration: none;">
+        <div class="alert alert-warning" role="alert">
+            <div class="container text-center">
+                <strong>COVID-19:</strong> Our showroom is <strong>open</strong> and available to all those <u>with an appointment</u>. Click here for more information.
+            </div>
+        </div>
+    </a>
+
+    <div class="container py-5">
+        <div class="row mx-0">
+            <div class="col-12 col-lg-6 pl-lg-5 mb-4 mt-md-0 d-block d-lg-none">
+                If you require a sample or would like to get a quote you can either submit our contact form or you can get in touch by calling us on <strong>01342 822269</strong>.
+            </div>
+            <div class="col-12 col-lg-6">
+
+                <div class="alert alert-success" role="alert" id="confirmation">
+                    <h4 class="alert-heading">Thank you!</h4>
+                    <p>Your query has been submitted</p>
+                    <hr>
+                    <p class="mb-0">We look to respond to all queries within 24 hours</p>
+                </div>
+
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Full name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Email address" name="email">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="Phone number" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="4" type="text" class="form-control" id="query" aria-describedby="query" placeholder="Message" style="resize: none;" name="query"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+            <div class="col-12 col-lg-6 pl-lg-5 mt-4 mt-md-0 d-none d-lg-block">
+                If you require a sample or would like to get a quote you can either submit our contact form or you can get in touch by calling us on <strong>01342 822269</strong>.
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-dark text-muted">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-6 pl-5 pl-md-0">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-muted"><i class="fas fa-map-marker-alt"></i> Unit 1-3, Lions Farm Estate, Parrock Lane, Colemans Hatch, Hartfield, TN7 4HT</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col pl-5">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="#" style="text-decoration: none;" class="text-muted">Products</a>
+                                </li>
+                                <li>
+                                    <a href="#" style="text-decoration: none;" class="text-muted">Gallery</a>
+                                </li>
+                                <li>
+                                    <a href="#" style="text-decoration: none;" class="text-muted">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-5 pb-3">
+                <div class="col text-center">
+                    <p class="mb-0 text-muted">&copy; Stratagem Stone Ltd</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
